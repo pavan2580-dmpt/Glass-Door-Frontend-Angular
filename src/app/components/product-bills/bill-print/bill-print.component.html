@@ -1,0 +1,95 @@
+<div class="cash_out">
+  <div class="mb-2 d-flex align-items-center justify-content-between">
+    <button class="btn p-0 btn_back" (click)="bacK()">< Back</button>
+    <p class="text-end mb-0">
+      <button (click)="print()" class="btn btn-primary px-3">Print</button>
+    </p>
+  </div>
+  <div id="receipt-content" class="cash_bill">
+    ********************************
+    <h4 class="mb-0">Cash Receipt</h4>
+    ********************************
+    <div class="top_date">
+      <div class="top_names">
+        <p>
+          <b>Name : {{ billList.customerName }}</b>
+        </p>
+      </div>
+      <div class="top_names">
+        <p><b>Ph. : </b> {{ billList.phoneNumber }}</p>
+        <p><b>City : </b>{{ billList.city }}</p>
+      </div>
+
+      <div class="">
+        <p>#{{ billList.billNo }}</p>
+        <p>{{ billList.updatedAt | date : "dd-MM-yyyy" }}</p>
+        <p><b>#{{ productList?.length }}</b></p>
+      </div>
+    </div>
+    <table class="table mb-0">
+      <tr>
+        <th class="ps-0">Product Name</th>
+        <th>Qty</th>
+        <th class="pr-0 text-end">Price</th>
+      </tr>
+      @for(list of productList ; track list){
+      <tr>
+        <td class="list_name">{{ list?.productId?.name }}</td>
+        <td class="qty">{{ list.quantity }}</td>
+        <td class="price">
+          {{ list?.quantity * list?.productId?.price | currency : "INR" }}
+        </td>
+      </tr>
+      }
+      <tr>
+        <td colspan="3"></td>
+      </tr>
+      <!-- <tr>
+              <td colspan="3" class="line"></td>
+            </tr> -->
+      <!-- <tr>
+              <td class="list_name bold">Total</td>
+              <td></td>
+              <td class="price">Rs.{{ calculateTotal().total }}</td>
+            </tr>
+            <tr>
+              <td class="list_name bold">Tax(10%)</td>
+              <td></td>
+              <td class="price">Rs.{{ calculateTotal().tax }}</td>
+            </tr>
+            <tr>
+              <td class="list_name bold">SGST(+)</td>
+              <td></td>
+              <td class="price">Rs.{{ calculateTotal().tax / 2 }}</td>
+            </tr>
+            <tr>
+              <td class="list_name bold">CGST(+)</td>
+              <td></td>
+              <td class="price">Rs.{{ calculateTotal().tax / 2 }}</td>
+            </tr> -->
+
+      <tr>
+        <td colspan="3" class="line"></td>
+      </tr>
+      <tr>
+        <td class="list_name Extbold">Total</td>
+        <td></td>
+        <td class="price Extbold">
+          {{ calculateTotal().total | currency : "INR" }}
+        </td>
+      </tr>
+      <!-- <tr>
+        <td colspan="3" class="line"></td>
+      </tr> -->
+      <!-- <tr>
+              <td colspan="3">
+                <h4 class="mb-0 pb-0">***Thnak You***</h4>
+                <p class="text-center mb-0 pb-0">Visit Again</p>
+                <p class="text-center mb-0 pb-0">
+                  4491 Perine Street Alexandria, VA 22370
+                </p>
+              </td>
+            </tr> -->
+    </table>
+  </div>
+</div>

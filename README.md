@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Packaging (electron-builder) and network
+
+- The `electron-builder` packager downloads helper binaries (rcedit, app-builder tools, etc.) from GitHub during packaging. If your environment has no network access or DNS to GitHub, packaging with `npm run package` or `npm run dist` will fail.
+- When offline you can still build the web app assets with:
+
+```powershell
+npm run build-prod
+```
+
+- Or use the provided offline script which skips the packaging step:
+
+```powershell
+npm run package-offline
+```
+
+- To create a Windows installer you must run `npm run package` on a machine with internet access, or run the packaging step in CI where network access is available. Alternatively, pre-install the required electron-builder helper binaries on the build machine (advanced).

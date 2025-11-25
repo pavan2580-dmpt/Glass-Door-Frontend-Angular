@@ -1,0 +1,132 @@
+.outer {
+  padding: 18px 20px 20px 20px;
+  h4 {
+    margin-bottom: 15px;
+  }
+  // .arry_outer {
+  //   max-height: 52vh;
+  //   margin-right: -20px;
+  //   overflow-y: auto;
+  //   padding-right: 20px;
+  // }
+  .formarray {
+    display: flex;
+    // align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+
+    .form-group {
+      margin-bottom: 0px;
+    }
+    .name_out {
+      width: 100%;
+      position: relative;
+      input{
+        text-transform: capitalize;
+      }
+    }
+    input {
+      width: 100%;
+      border-radius: 6px;
+      padding: 7px 15px;
+    }
+    .btn-remove {
+      padding: 0px;
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
+      text-align: center;
+      line-height: 3px;
+      color: #fff;
+      font-size: 9px;
+      margin-right: 0px;
+      margin-top: 33px;
+    }
+  }
+  .btn-primary {
+    padding: 4px 30px !important;
+    margin-top: 5px;
+  }
+}
+.top_date {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px dashed #252525;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  p {
+    font-size: 13px;
+    margin-bottom: 0px;
+    font-weight: 500;
+  }
+}
+.btn_back {
+  font-weight: 600;
+  font-size: 14px;
+  border: none !important;
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  &:hover {
+    border: none;
+  }
+}
+.Extbold {
+  font-weight: 900 !important;
+  padding-bottom: 10px !important;
+}
+
+.topNames {
+  gap: 15px;
+  .name_cust {
+    width: 70%;
+  }
+  .form-control {
+    padding: 7px 15px;
+  }
+}
+.form-group {
+  margin-bottom: 10px;
+}
+// .dropdown {
+//   width: 354px;
+//   // margin-top: 0px;
+// }
+.text-danger {
+  font-size: 11px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+::ng-deep .ng-select {
+  .ng-select-dropdown {
+    z-index: 1000;
+  }
+  .ng-select-container {
+    border-radius: 6px;
+    border-color: #d3d7db !important;
+    height: 37px !important;
+    font-size: 14px;
+    box-shadow: none !important;
+    padding-left: 5px !important;
+    .ng-arrow-wrapper {
+      display: none;
+    }
+  }
+  .ng-value-container .ng-input > input {
+    padding: 4px 6px !important;
+  }
+  .ng-clear-wrapper {
+    display: none;
+  }
+  .ng-dropdown-panel {
+    box-shadow: none !important;
+    border-color: #d3d7db;
+    .ng-dropdown-panel-items .ng-option {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 7px 15px;
+    }
+  }
+}

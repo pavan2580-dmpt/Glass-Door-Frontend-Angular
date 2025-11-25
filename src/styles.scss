@@ -1,1 +1,390 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+
+@import "bootstrap/scss/bootstrap";
+/* External Google Fonts imports can cause the angular-css-inline-fonts-plugin
+  to fail during production builds (it tries to inline external stylesheets).
+  Load the Google Fonts via a <link> in `src/index.html` instead. */
+
+// body{
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+.modal {
+  --bs-modal-width: 320px;
+}
+body {
+  background-color: #eff6ff;
+  font-family: "Inter", sans-serif;
+}
+.main {
+  padding: 35px 0px 0px;
+  @media screen and (max-width: 600px) {
+    padding: 20px 0px;
+  }
+  .container {
+    background-color: #fff;
+    width: 680px;
+
+    @media screen and (max-width: 600px) {
+      width: 92%;
+    }
+    .header {
+      padding: 8px 16px;
+      border-radius: 6px 6px 0px 0px;
+      color: #fff;
+      font-weight: 600;
+    }
+    .menu {
+      ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        li {
+          padding: 0px 0px;
+          // &:nth-child(3) a {
+          //   background-color: #e85e77;
+          //   &:hover {
+          //     background-color: #f35a75;
+          //   }
+          // }
+          // &:nth-child(2) a {
+          //   background-color: #f6b53e;
+          //   &:hover {
+          //     background-color: #f6cd3e;
+          //   }
+          // }
+          a {
+            text-decoration: none;
+            color: #4c4c5c;
+            font-size: 13px;
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 1);
+            padding: 4px 16px;
+            border-radius: 5px;
+            border: none;
+            // margin-left: 10px;
+            display: block;
+            &:hover,
+            &.active {
+              background-color: #1de1cc;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1c1c1c;
+  }
+
+  .product-list-sec {
+    padding: 10px 20px;
+    align-items: center;
+  }
+
+  input.form-control.search {
+    width: 200px;
+    border-radius: 40px;
+    font-size: 10px;
+    margin-right: 12px;
+    font-size: 13px;
+    padding: 5px 15px;
+    font-weight: 500;
+    color: #1e1e1e;
+    letter-spacing: 0px;
+    &:focus-visible {
+      box-shadow: none;
+    }
+  }
+  button.btn.btn-primary {
+    border-radius: 40px;
+    font-size: 13px;
+    padding: 0px 30px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .table-container {
+    max-height: 68vh;
+    overflow-y: auto;
+    thead th {
+      position: sticky;
+      top: 0;
+      background-color: #f2f7fc;
+    }
+
+    th,
+    td {
+      box-sizing: border-box;
+      word-wrap: break-word;
+      white-space: normal;
+      text-transform: capitalize;
+    }
+    // .w-80 {
+    //   width: 50%;
+    // }
+    .btns {
+      display: flex;
+      gap: 10px;
+
+      button {
+        border: none !important;
+        padding: 0px;
+        font-weight: bold;
+        &:focus,
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+    .remove {
+      color: #fb3535;
+    }
+  }
+
+  .table {
+    thead tr {
+      background-color: #f2f7fc;
+    }
+    // tr:last-child td {
+    //   border: none;
+    // }
+    th {
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 600;
+      background: none;
+      border: none;
+      padding: 10px 20px;
+      vertical-align: middle;
+    }
+    td {
+      font-size: 13px;
+      font-weight: 500;
+      background: none;
+      border: none;
+      padding: 6px 20px;
+      color: #1e1e1e;
+      vertical-align: middle;
+      border-bottom: 1px solid #e2e8f0;
+      &.price {
+        font-weight: 700;
+      }
+    }
+    img {
+      border: 1px solid #dbdfe3;
+      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .la label {
+    color: #4c4c5c;
+    margin-bottom: 10px;
+  }
+  .in input {
+    border-radius: 5px;
+    outline: none;
+    padding: 10px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.2588235294);
+    width: 100%;
+  }
+  app-add-product p {
+    padding: 0px 100px;
+  }
+  .add-product-outer {
+    padding: 0px 100px;
+  }
+  .la-in-1 {
+    margin-bottom: 15px;
+    position: relative;
+  }
+  .in button {
+    background-color: #3980ed;
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    color: #fff;
+    font-size: 13px;
+    position: absolute;
+    right: 8px;
+    top: 40px;
+  }
+
+  app-add-product p {
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .submit-btn button {
+    width: 100%;
+    background-color: #3980ed;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+.form-group {
+  margin-bottom: 10px;
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4c4c5c;
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+  .form-control {
+    border: 1px solid #d3d7db;
+    padding: 7px 14px;
+    font-size: 14px;
+    color: #1e1e1e;
+    &:focus-visible {
+      box-shadow: none;
+    }
+  }
+}
+.modal-content {
+  .modal-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1c1c1c;
+  }
+  .modal-header {
+    margin-bottom: 10px;
+  }
+  padding: 30px;
+  .modal-header,
+  .modal-footer,
+  .modal-body {
+    border: none !important;
+    padding: 0px !important;
+  }
+  .btn-primary {
+    padding: 8px 15px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+input:focus-visible,
+input:focus,
+button:focus-visible,
+button:focus {
+  box-shadow: none !important;
+}
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+.expried {
+  padding: 30px;
+  width: 380px;
+  margin: 0px auto;
+  text-align: center;
+  margin-top: 60px;
+  img {
+    margin-bottom: 15px;
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 14px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+.btn-close {
+  font-size: 11px;
+}
+.dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 178px;
+  overflow-y: auto;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 3px;
+  z-index: 9;
+}
+
+.dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 8px !important;
+  cursor: pointer;
+  display: block !important;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+.dropdown ul li:hover {
+  background: #f2f7fc;
+}
+.page_nation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  p {
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+  }
+  ul {
+    margin-bottom: 0px;
+    gap: 1px;
+    .page-link {
+      padding: 3px 10px !important;
+      font-size: 14px;
+      &:focus,
+      &:focus-visible {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+.alert-danger {
+  font-size: 12px;
+  padding: 6px 15px;
+  text-align: center;
+  color: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+input:read-only {
+  background-color: #ebe6e642 !important;
+  color: #888;
+  cursor: not-allowed;
+}
+// .btn-primary{
+//   background-color: #465dff;
+// }
+// .bg-primary{
+//   background-color: #465dff;
+// }

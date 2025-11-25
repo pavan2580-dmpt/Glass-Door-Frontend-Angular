@@ -1,0 +1,9 @@
+<div class="confirm_inner">
+  <p class="errow"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
+  <h4>Are you sure?</h4>
+  <p>you are about to delete this product, this cannot be undone...!</p>
+  <div class="pop_btn">
+    <button class="btn btn-secondary" (click)="activeModal.dismiss('Cross click')">No</button>
+    <button (click)="delete()" class="btn btn-danger">Yes</button>
+  </div>
+</div>

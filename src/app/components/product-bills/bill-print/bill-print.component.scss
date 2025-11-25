@@ -1,0 +1,105 @@
+.cash_out {
+  width: 280px;
+  margin: 0px auto;
+}
+.cash_bill {
+  padding: 15px;
+  background-color: #fff;
+  h4 {
+    text-align: center;
+    padding-bottom: 4px;
+    margin-bottom: 0px !important;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  th,
+  td {
+    padding: 4px 5px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1e1e1e;
+    text-transform: capitalize;
+  }
+  th {
+    font-weight: 700;
+  }
+  .price {
+    font-weight: 600;
+    text-align: right;
+    padding-right: 0px;
+  }
+  .qty {
+    text-align: center;
+  }
+  .list_name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 125px;
+    padding-left: 0px;
+  }
+  .line {
+    border-top: 2px dashed #252525;
+  }
+  .bold {
+    font-weight: 600;
+  }
+}
+.top_date {
+  border-bottom: 2px dashed #252525;
+  margin-bottom: 10px;
+  div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+  }
+  p {
+    font-size: 13px;
+    margin-bottom: 0px;
+    font-weight: 500;
+  }
+}
+.btn_back {
+  font-weight: 600;
+  font-size: 14px;
+  border: none !important;
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+  &:hover {
+    border: none;
+  }
+}
+.Extbold {
+  font-weight: 900 !important;
+  //   padding-bottom: 10px !important;
+}
+
+@media print {
+  button {
+    display: none;
+  }
+  .header,
+  .footer,
+  .window-title,
+  .page-url {
+    display: none !important;
+  }
+
+  #projectName,
+  #dateTime,
+  #urlBar {
+    display: none !important;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+p{
+  text-transform: capitalize;
+}

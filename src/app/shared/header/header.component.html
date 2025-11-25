@@ -1,0 +1,23 @@
+<div class="container2 shadow-md rounded p-0 w-full">
+  <div
+    class="d-flex bg-primary justify-content-between align-items-center header"
+  >
+    <div class="d-flex align-items-center gap-2">
+      <i class="fa fa-cube" aria-hidden="true"></i> Glass House
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a [routerLink]="'/sales-products'" routerLinkActive="active"> Products</a></li>
+        <li><a [routerLink]="'/product-bills'" routerLinkActive="active"> Bills</a></li>
+        @if(userRole === 'superAdmin'){
+        <li><a [routerLink]="'/purchase-products'" routerLinkActive="active"> Purchases</a></li>
+        }
+        <li class="logout">
+          <button (click)="logout()" class="btn text-white" [routerLink]="'/'">
+            <i class="fa fa-sign-out" aria-hidden="true"></i
+          ></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

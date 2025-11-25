@@ -1,0 +1,122 @@
+<div class="container shadow-sm rounded p-0 w-full">
+  <app-header></app-header>
+  <div class="outer">
+    <h4>Product Bills</h4>
+    <div class="content">
+      @if(error){
+      <div class="error alert alert-danger">
+        {{ error }}
+      </div>
+      }
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <div class="d-flex topNames">
+          <div class="form-group">
+            <label>Customer Name</label>
+            <input
+              placeholder=""
+              formControlName="customerName"
+              type="text"
+              class="form-control"
+                        
+            />
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <input
+              placeholder=""
+              formControlName="city"
+              type="text"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input
+              placeholder=""
+              formControlName="phoneNumber"
+              type="text"
+              class="form-control"
+              maxlength="10"
+              pattern="[0-9]*"
+            />
+          </div>
+        </div>
+        <div class="formArray arry_outer" formArrayName="products">
+          @for (item of products.controls; let i=$index; track item){
+          <div [formGroupName]="i" class="formarray">
+            <div class="form-group name_out">
+              <label>Product Name</label>
+              <input
+                placeholder=""
+                formControlName="name"
+                type="text"
+                class="form-control"
+                (input)="onInputChange(i)"
+                
+              />
+              @if (i >= 0 && i < productData.length) { @if (productData[i] &&
+              productData[i].length > 0) {
+              <div class="dropdown">
+                <ul>
+                  @for(product of productData[i]; track product){
+                  <li (click)="onProductSelect(product, i)">
+                    {{ product.name }}
+                  </li>
+                  }
+                </ul>
+              </div>
+              } }
+            </div>
+            <div class="form-group">
+              <label>Price</label>
+              <input
+                placeholder=""
+                formControlName="price"
+                type="text"
+                class="form-control"
+                
+              />
+            </div>
+            <div class="form-group">
+              <label>QTY</label>
+              <input
+                placeholder=""
+                formControlName="quantity"
+                type="number"
+                class="form-control"
+                min="1"
+                step="1"
+                (input)="onQtyChange(item, i)"
+              />
+              @if(item.get('quantity')?.hasError('quantityExceeds')){
+              <div class="text-danger">
+                Available Stock <b>{{ stockQty }}</b>
+              </div>
+              }
+            </div>
+            @if( products.length > 1){
+            <div>
+              <button
+                class="btn btn-remove btn-danger"
+                type="button"
+                (click)="removeProduct(i, item)"
+              >
+                🗙
+              </button>
+            </div>
+            }
+          </div>
+          }
+        </div>
+        <div class="d-flex gap-3">
+          <button class="btn btn-primary" type="button" (click)="addProduct()">
+            Add Product
+          </button>
+          <button class="btn btn-primary btn-success" type="submit">
+            Print
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
