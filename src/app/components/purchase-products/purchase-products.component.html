@@ -64,6 +64,7 @@
       [collectionSize]="totalItems"
       [(page)]="currentPage"
       [pageSize]="itemsPerPage"
+      [maxSize]="5"
       (pageChange)="onPageChange($event)"
     >
     </ngb-pagination>
@@ -126,7 +127,6 @@
             inputmode="numeric"
             [readonly]="modifyData"
             (keypress)="validateNumber($event)"
-           
           />
           @if(modifyData){
           <input
@@ -138,7 +138,7 @@
             min="1"
             step="1"
             [(ngModel)]="extraQty"
-            [ngModelOptions]="{standalone: true}"
+            [ngModelOptions]="{ standalone: true }"
           />
           }
         </div>
